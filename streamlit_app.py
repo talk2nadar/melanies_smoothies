@@ -18,7 +18,7 @@ st.write('The name on your Smoothie will be:',name_on_order)
 
 cnx=st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('search_on'))
 
 #my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0) #filter out rows
 
